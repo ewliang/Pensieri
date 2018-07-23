@@ -1,0 +1,31 @@
+{
+  "name": "dryexpresstemplate",
+  "version": "1.0.0",
+  "description": "A headless Express project that is reated using npm init and bare functionalities.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "project",
+    "dry",
+    "bare",
+    "minimum",
+    "template"
+  ],
+  "author": "Eric Liang <https://www.eric-liang.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.6",
+    "morgan": "^1.9.0"
+  }
+}
