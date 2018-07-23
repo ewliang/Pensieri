@@ -19,6 +19,9 @@ db.once('open', function() {
 
 //Routes Files
 const index = require('./routes/index');
+const user = require('./routes/user');
+const category = require('./routes/category');
+const post = require('./routes/post');
 
 app.use(cors());
 app.disable('x-powered-by');
@@ -30,6 +33,9 @@ app.use(express.static(__dirname + '/'));
 
 //Routes Paths
 app.use('/', index);
+app.use('/users', user);
+app.use('/categories', category);
+app.use('/posts', post);
 
 // error handler
 app.use(function(err, req, res, next) {
