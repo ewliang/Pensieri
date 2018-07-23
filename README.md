@@ -4,7 +4,7 @@
 
 > Pensieri is a Full Stack Blogging Platform made using a MEVN stack (MongoDB, ExpressJS, VueJS (specifically NuxtJS), and NodeJS).
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 
 ---
@@ -34,8 +34,14 @@
 > install npm packages
 
 ```shell
-$ npm install
+$ cd pensieri/pensieri-client && npm install
+$ cd pensieri/pensieri-server && npm install
 ```
+
+Next, add in your MongoDB connection URL to the /config/db.js in the correct json value location.
+
+Once installed, you can run them:
+- Development: npm run dev
 
 ---
 
