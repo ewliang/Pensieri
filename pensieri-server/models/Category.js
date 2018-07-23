@@ -7,7 +7,11 @@ let CategorySchema = new Schema(
     title: {
       type: String,
       unique: true
-    }
+    },
+    permalink: {
+      type: String
+    },
+    description: String
   },
   {
     timestamps: true
