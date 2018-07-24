@@ -46,7 +46,9 @@ module.exports = {
     Post.findByIdAndUpdate(req.params.id, { $set:
       {
         title: req.body.title,
-        description: req.body.description
+        body: req.body.body,
+        isPublished: req.body.isPublished,
+        isFeatured: req.body.isFeatured
       }
     }, { new: true }, (err, data) => { //New:true is so data returns the modified document. By default it's false.
       if(err) {

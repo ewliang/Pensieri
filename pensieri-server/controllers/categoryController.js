@@ -1,4 +1,5 @@
 const Category = require('../models/Category');
+const Post = require('../models/Post');
 
 module.exports = {
   //Get All Categories
@@ -78,5 +79,10 @@ module.exports = {
         }
       }
     });
+  },
+
+  //Get Posts By Category
+  getPostsByCategory: function(req, res) {
+    
   }
 }
