@@ -11,6 +11,10 @@ let PostSchema = new Schema(
     },
     permalink: String,
     body: String,
+    category: {
+      type: Schema.Types.ObjectId,
+      ref: 'Category'
+    },
     isFeatured: {
       type: Boolean,
       default: false
