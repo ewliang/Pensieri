@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form v-model = "User" v-on:submit.prevent = "login()">
+    <form v-on:submit.prevent = "login()">
       <input type = "email" placeholder = "Email" v-model = User.email>
       <input type = "password" placeholder = "Password" v-model = User.password>
       <input type = "submit" value = "Login">
