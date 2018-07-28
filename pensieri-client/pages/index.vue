@@ -23,11 +23,13 @@
 </template>
 
 <script>
+import PostCardComponent from '~/components/PostCardComponent.vue'
 import AppLogo from '~/components/AppLogo.vue'
 
 export default {
   components: {
-    AppLogo
+    AppLogo,
+    PostCardComponent
   }
 }
 </script>
@@ -62,4 +64,3 @@ export default {
   padding-top: 15px;
 }
 </style>
-
