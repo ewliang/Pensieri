@@ -1,5 +1,13 @@
 <template>
   <div>
+    <article>
+      <header>
+        <h1>{{ post.title }}</h1>
+      </header>
+      <p>
+        {{ post.body }}
+      </p>
+    </article>
   </div>
 </template>
 
@@ -7,8 +15,11 @@
 import axios from 'axios'
 
 export default {
-  async asyncData () {
-    let post = axios.
+  async asyncData ({ params }) {
+    let post = await axios.get('/posts/${params.post}')
+    return {
+      post: post.data
+    }
   },
   data () {
     return {

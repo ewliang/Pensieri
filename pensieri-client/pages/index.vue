@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import PostCardComponent from '~/components/PostCardComponent.vue'
 
 export default {

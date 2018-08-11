@@ -4,6 +4,7 @@ const postController = require('../controllers/postController');
 
 //Get All post
 router.get('/', postController.getPosts);
+router.get('/:categoryID', postController.getPostsByCategory);
 router.post('/', postController.createPost);
 router.put('/:id', postController.updatePost);
 router.delete('/:id', postController.deletePost);

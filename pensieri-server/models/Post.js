@@ -10,6 +10,7 @@ let PostSchema = new Schema(
       required: true
     },
     permalink: String,
+    excerpt: String,
     body: String,
     category: {
       type: Schema.Types.ObjectId,

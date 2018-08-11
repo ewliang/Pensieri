@@ -21,6 +21,26 @@ module.exports = {
     });
   },
 
+  //Get Posts by Category
+  getPostsByCategory: function(req, res) {
+    Post.find({ category: req.body.categoryID }, (err, data) => {
+      if(err) {
+        console.error(err);
+        res.status(404).json({
+          message: err
+        });
+      } else {
+        if(data == null) {
+          res.status(400).json({
+            message: "No posts were found."
+          });
+        } else {
+          res.json(data);
+        }
+      }
+    });
+  },
+
   //Create New Post
   createPost: function(req, res) {
     var newPostData = new Post({

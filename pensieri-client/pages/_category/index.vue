@@ -1,16 +1,23 @@
 <template>
   <div>
+    <PostCardComponent v-for = "(post, index) in posts"
+      v-bind:key = "index"
+      v-bind:postTitle = "post.title"
+      v-bind:postExcerpt = "post.excerpt"
+      v-bind:postURL = "post.permalink">
+    </PostCardComponent>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import PostCardComponent from '~/components/PostCardComponent.vue'
 
 export default {
-  async asyncData () {
-    let post = await axios.get('/categories/')
+  async asyncData ({ params }) {
+    let posts = await axios.get('/posts/${params.category}')
     return {
-      post: post.data
+      posts: posts.data
     }
   },
   data () {

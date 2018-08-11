@@ -83,6 +83,25 @@ module.exports = {
 
   //Get Posts By Category
   getPostsByCategory: function(req, res) {
-    
+    Category.findOne({ permalink: req.params.permalink }, (err, data) => {
+
+      Post.find({ category: data._id }, (err, data) => {
+        if(err) {
+          console.error(err);
+          res.status(404).json({
+            message: err
+          });
+        } else {
+          if(data == null) {
+            res.status(204).json({
+              message: "No posts were found in the requested category."
+            });
+          } else {
+            console.log("The posts in category [${req.params.permalink}] has been found.");
+            res.status(200).json(data);
+          }
+        }
+      });
+    });
   }
 }
