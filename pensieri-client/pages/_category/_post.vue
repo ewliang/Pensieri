@@ -16,7 +16,7 @@ import axios from 'axios'
 
 export default {
   async asyncData ({ params }) {
-    let post = await axios.get('/posts/${params.post}')
+    let post = await axios.get('http://localhost:4000/posts/${params.post}')
     return {
       post: post.data
     }

@@ -15,7 +15,7 @@ import PostCardComponent from '~/components/PostCardComponent.vue'
 
 export default {
   async asyncData ({ params }) {
-    let posts = await axios.get('/posts/${params.category}')
+    let posts = await axios.get('http://localhost:4000/posts/${params.category}')
     return {
       posts: posts.data
     }

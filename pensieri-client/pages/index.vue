@@ -30,7 +30,7 @@ export default {
     PostCardComponent
   },
   async asyncData () {
-    let posts = await axios.get('/posts')
+    let posts = await axios.get('http://localhost:4000/posts')
     return {
       posts: posts.data
     }

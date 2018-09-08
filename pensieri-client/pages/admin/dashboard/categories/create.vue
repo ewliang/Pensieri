@@ -8,7 +8,7 @@ import axios from 'axios'
 
 export default {
   async asyncData () {
-    let categories = await axios.get('/categories')
+    let categories = await axios.get('http://localhost:4000/categories')
     return {
       categories: categories.data
     }
