@@ -52,6 +52,7 @@ module.exports = {
     newPostData.save((err, data) => {
       if(err) {
         console.log("Error occurred while attempting to create a new post.");
+        console.log(err);
         res.status(404).json({
           message: err
         });
