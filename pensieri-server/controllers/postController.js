@@ -43,11 +43,15 @@ module.exports = {
 
   //Create New Post
   createPost: function(req, res) {
+    //Create Permalink
+    var permalink = req.body.title.trim().toLowerCase().replace(/\s/g, '-');
+    //New Post Data Object
     var newPostData = new Post({
-      title: req.body.title,
-      body: req.body.body,
+      title: req.body.title.trim(),
+      permalink: permalink,
       isPublished: req.body.isPublished,
-      isFeatured: req.body.isFeatured
+      isFeatured: req.body.isFeatured,
+      body: req.body.body
     });
     newPostData.save((err, data) => {
       if(err) {
