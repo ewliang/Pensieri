@@ -18,7 +18,8 @@ module.exports = {
     '@nuxtjs/auth'
   ],
   axios: {
-    baseURL: 'http://localhost:4000'
+    baseURL: 'http://localhost:4000',
+    timeout: 3000
   },
   /*
   ** Customize the progress bar color
