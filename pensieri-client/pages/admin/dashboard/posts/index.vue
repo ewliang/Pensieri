@@ -10,9 +10,9 @@
       </thead>
       <tbody>
         <tr v-for = "(post, index) in posts" v-bind:key = "index">
-          <td>{{ post._id }}</td>
-          <td>{{ post.title }}</td>
-          <td></td>
+          <td><input type = "checkbox" v-bind:value = "post._id"></td>
+          <td><nuxt-link :to = "'/admin/dashboard/posts/edit/' + post.permalink">{{ post.title }}</nuxt-link></td>
+          <td><button @click.prevent = "deletePost(post._id)">Delete</button></td>
         </tr>
       </tbody>
     </table>
@@ -29,9 +29,9 @@ export default {
       posts: posts.data
     }
   },
-  data () {
-    return {
-
+  methods: {
+    deletePost (postID) {
+      axios.delete('http://localhost:4000/posts/' + postID)
     }
   }
 }
