@@ -23,7 +23,7 @@ module.exports = {
 
   //Get Posts by Category
   getPostsByCategory: function(req, res) {
-    Post.find({ category: req.body.categoryID }, (err, data) => {
+    Post.find({ category: req.params.categoryID }, (err, data) => {
       if(err) {
         console.error(err);
         res.status(404).json({
