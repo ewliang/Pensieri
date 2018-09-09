@@ -15,6 +15,10 @@
         <option value = "true">True</option>
       </select>
       <br>
+      <select>
+        <option v-for = "(category, index) in categories" v-bind:key = "index" :value = "category._id">{{ category.title }}</option>
+      </select>
+      <br>
       <textarea v-model = "Post.body" placeholder = "Your post content..."></textarea>
       <br>
       <input type = "submit" value = "Create">
@@ -26,6 +30,12 @@
 import axios from 'axios'
 
 export default {
+  async asyncData () {
+    let categories = await axios.get('http://localhost:4000/categories')
+    return {
+      categories: categories.data
+    }
+  },
   data () {
     return {
       Post: {
