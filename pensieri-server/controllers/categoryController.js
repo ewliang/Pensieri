@@ -24,10 +24,14 @@ module.exports = {
 
   //Create New Category
   createCategory: function(req, res) {
+    // Create permalink from title.
+    var permalink = req.body.title.trim().toLowerCase().replace(/\s/g, '-');
+    // New category data.
     var newCategoryData = new Category({
       title: req.body.title,
       description: req.body.description,
-      isPublished: req.body.isPublished
+      isPublished: req.body.isPublished,
+      permalink: permalink
     });
     newCategoryData.save((err, data) => {
       if(err) {
