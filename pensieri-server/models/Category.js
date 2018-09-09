@@ -6,10 +6,13 @@ let CategorySchema = new Schema(
   {
     title: {
       type: String,
-      unique: true
+      unique: true,
+      required: true
     },
     permalink: {
-      type: String
+      type: String,
+      unique: true,
+      required: true
     },
     description: String
   },

@@ -9,7 +9,11 @@ let PostSchema = new Schema(
       unique: true,
       required: true
     },
-    permalink: String,
+    permalink: {
+      type: String,
+      unique: true,
+      required: true
+    },
     body: String,
     category: {
       type: Schema.Types.ObjectId,
