@@ -22,6 +22,26 @@ module.exports = {
     });
   },
 
+  //Get Category By Id
+  getCategoryById: function(req, res) {
+    Category.findById(req.params.id, (err, data) => {
+      if(err) {
+        console.error(err);
+        res.status(404).json({
+          message: err
+        });
+      } else {
+        if(data == null) {
+          res.status(400).json({
+            message: "No category found."
+          });
+        } else {
+          res.json(data);
+        }
+      }
+    });
+  },
+
   //Create New Category
   createCategory: function(req, res) {
     // Create permalink from title.
