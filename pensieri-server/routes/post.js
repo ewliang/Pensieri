@@ -4,9 +4,11 @@ const postController = require('../controllers/postController');
 
 //Get All post
 router.get('/', postController.getPosts);
-router.get('/:categoryID', postController.getPostsByCategory);
 router.post('/', postController.createPost);
 router.put('/:id', postController.updatePost);
 router.delete('/:id', postController.deletePost);
+
+router.get('/:id', postController.getPostById);
+router.get('/category/:categoryID', postController.getPostsByCategory);
 
 module.exports = router;
