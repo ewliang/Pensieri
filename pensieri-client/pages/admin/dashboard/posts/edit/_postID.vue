@@ -26,6 +26,12 @@
 import axios from 'axios'
 
 export default {
+  async asyncData ({ params }) {
+    let post = await axios.get('http://localhost:4000/posts/' + params.postID)
+    return {
+      post: post.data
+    }
+  },
   data () {
     return {
       Post: {
@@ -46,6 +52,12 @@ export default {
         console.log(err)
       })
     }
+  },
+  created () {
+    this.Post.title = this.post.title
+    this.Post.body = this.post.body
+    this.Post.isPublished = this.post.isPublished
+    this.Post.isFeatured = this.post.isFeatured
   }
 }
 </script>
