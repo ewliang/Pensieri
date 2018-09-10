@@ -11,7 +11,7 @@
       <tbody>
         <tr v-for = "(post, index) in posts" v-bind:key = "index">
           <td><input type = "checkbox" v-bind:value = "post._id"></td>
-          <td><nuxt-link :to = "'/admin/dashboard/posts/edit/' + post.permalink">{{ post.title }}</nuxt-link></td>
+          <td><nuxt-link :to = "'/admin/dashboard/posts/edit/' + post._id">{{ post.title }}</nuxt-link></td>
           <td><button @click.prevent = "deletePost(post._id)">Delete</button></td>
         </tr>
       </tbody>
