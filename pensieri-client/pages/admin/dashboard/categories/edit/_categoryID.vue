@@ -6,7 +6,7 @@
       <input type = "text" v-model = "Category.title" id = "categoryTitle" placeholder = "Category">
       <br>
       <label for = "isPublished">Is Published?</label>
-      <select v-model = "Category.isPublished" id = "isPublished">
+      <select v-model = "Category.isPublished" id = "isPublished" required>
         <option value = "false">False</option>
         <option value = "true">True</option>
       </select>
@@ -39,8 +39,13 @@ export default {
   },
   methods: {
     editCategory () {
-      axios.post('http://localhost:4000/categories', this.Category)
+      axios.put('http://localhost:4000/categories', this.Category)
     }
+  },
+  created () {
+    this.Category.title = this.category.title
+    this.Category.description = this.category.description
+    this.Category.isPublished = this.category.isPublished
   }
 }
 </script>
