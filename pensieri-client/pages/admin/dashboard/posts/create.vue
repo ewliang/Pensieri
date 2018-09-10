@@ -48,7 +48,7 @@ export default {
     }
   },
   methods: {
-    createPost () {
+    async createPost () {
       axios.post('http://localhost:4000/posts', this.Post)
       .then(function (res) {
         console.log(res)

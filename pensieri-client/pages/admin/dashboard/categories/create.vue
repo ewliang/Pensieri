@@ -32,7 +32,7 @@ export default {
     }
   },
   methods: {
-    createCategory () {
+    async createCategory () {
       axios.post('http://localhost:4000/categories', this.Category)
     }
   }
