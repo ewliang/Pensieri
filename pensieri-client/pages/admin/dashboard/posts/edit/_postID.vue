@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent = "createPost()">
+    <form @submit.prevent = "updatePost()">
       <label for = "postTitle">Title</label>
       <input type = "text" v-model = "Post.title" placeholder = "Post Title" id = "postTitle">
       <br>
@@ -17,7 +17,7 @@
       <br>
       <textarea v-model = "Post.body" placeholder = "Your post content..."></textarea>
       <br>
-      <input type = "submit" value = "Create">
+      <input type = "submit" value = "Update">
     </form>
   </div>
 </template>
@@ -43,8 +43,8 @@ export default {
     }
   },
   methods: {
-    createPost () {
-      axios.post('http://localhost:4000/posts', this.Post)
+    updatePost () {
+      axios.put('http://localhost:4000/posts', this.Post)
       .then(function (res) {
         console.log(res)
       })
