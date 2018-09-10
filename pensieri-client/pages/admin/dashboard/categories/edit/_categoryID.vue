@@ -22,6 +22,12 @@
 import axios from 'axios'
 
 export default {
+  async asyncData ({ params }) {
+    let category = await axios.get('http://localhost:4000/categories/' + params.categoryID)
+    return {
+      category: category.data
+    }
+  },
   data () {
     return {
       Category: {
