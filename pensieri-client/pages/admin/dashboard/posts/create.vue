@@ -6,16 +6,16 @@
       <br>
       <label for = "isFeatured">Is Featured?</label>
       <select v-model = "Post.isFeatured" id = "isFeatured">
-        <option value = "false">False</option>
+        <option value = "false" selected>False</option>
         <option value = "true">True</option>
       </select>
       <label for = "isPublished">Is Published?</label>
       <select v-model = "Post.isPublished" id = "isPublished">
-        <option value = "false">False</option>
+        <option value = "false" selected>False</option>
         <option value = "true">True</option>
       </select>
       <br>
-      <select>
+      <select v-model = "Post.category" required>
         <option v-for = "(category, index) in categories" v-bind:key = "index" :value = "category._id">{{ category.title }}</option>
       </select>
       <br>
@@ -42,7 +42,8 @@ export default {
         title: '',
         body: '',
         isPublished: false,
-        isFeatured: false
+        isFeatured: false,
+        category: ''
       }
     }
   },
