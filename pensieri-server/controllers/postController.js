@@ -51,7 +51,8 @@ module.exports = {
       permalink: permalink,
       isPublished: req.body.isPublished,
       isFeatured: req.body.isFeatured,
-      body: req.body.body
+      body: req.body.body,
+      category: req.body.category
     });
     newPostData.save((err, data) => {
       if(err) {
