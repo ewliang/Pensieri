@@ -15,11 +15,27 @@ module.exports = {
   },
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    '@nuxtjs/apollo'
   ],
   axios: {
     baseURL: 'http://localhost:4000',
     timeout: 3000
+  },
+  apollo: {
+    tokenName: 'pensieri-apollo-token',
+    tokenExpires: 10,
+    errorHandler(error) {
+      console.log('%cError', 'background: red;', error.message)
+    },
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:4000',
+        httpLinkOptions: {
+          credentials: 'same-origin'
+        }
+      }
+    }
   },
   /*
   ** Customize the progress bar color
