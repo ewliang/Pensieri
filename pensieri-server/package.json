@@ -1,7 +1,7 @@
 {
-  "name": "dryexpresstemplate",
+  "name": "pensieriserver",
   "version": "1.0.0",
-  "description": "A headless Express project that is reated using npm init and bare functionalities.",
+  "description": "Pensieriserver is the backend for the Pensieri blog project made on a Node.js stack.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,12 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "express",
-    "project",
-    "dry",
-    "bare",
-    "minimum",
-    "template"
+    "pensieri server",
+    "blog",
+    "pensieri"
   ],
   "author": "Eric Liang <https://www.eric-liang.com>",
   "license": "ISC",
