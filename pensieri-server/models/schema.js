@@ -42,6 +42,12 @@ const RootQuery = new GraphQLObjectType({
                     }
                 }
             }
+        },
+        posts: {
+            type: new GraphQLList(PostType),
+            resolve(parentValue, args) {
+                return posts;
+            }
         }
     }
 });
