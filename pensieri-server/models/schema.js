@@ -22,7 +22,10 @@ const PostType = new GraphQLObjectType({
         author: { type: GraphQLString }
     })
 });
-
+const posts = [
+    { id: "1", title: "Hello World", body: "Heyyyyy!!!!" },
+    { id: "2", title: "Hello World2", body: "Heyyyyy!!!!2" }
+];
 // Root Query
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -33,8 +36,10 @@ const RootQuery = new GraphQLObjectType({
                 id: { type: GraphQLString }
             },
             resolve(parentValue, args) {
-                for(let i = 0; i < postMessage.length; i++) {
-    
+                for(let i = 0; i < posts.length; i++) {
+                    if(posts[i].id == args.id) {
+                        return posts[i];
+                    }
                 }
             }
         }
