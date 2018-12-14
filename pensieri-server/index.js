@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app     = express();
 const databaseConfig = require('./config/db');
-const schema = require('./models/schema');
+const schema = require('./schema/schema');
 
 const path = require('path');
 
