@@ -10,7 +10,8 @@ const path = require('path');
 
 //Database Connection
 mongoose.Promise = require('bluebird');
-mongoose.connect(databaseConfig.database.connectionURL);
+mongoose.set('useCreateIndex', true);
+mongoose.connect(databaseConfig.database.connectionURL, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'There is an error while attempting to connect to the database.'));
 db.once('open', function() {
