@@ -1,10 +1,12 @@
 const express = require('express');
+const expressGraphQL = require('express-graphql');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app     = express();
 const databaseConfig = require('./config/db');
+const schema = require('./models/schema');
 
 const path = require('path');
 
@@ -43,6 +45,12 @@ app.use('/', index);
 app.use('/users', user);
 app.use('/categories', category);
 app.use('/posts', post);
+
+//GraphQL
+app.use('/graphql', expressGraphQL({
+  schema: schema,
+  graphiql: true
+}));
 
 // error handler
 app.use(function(err, req, res, next) {
