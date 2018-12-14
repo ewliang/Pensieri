@@ -1,5 +1,3 @@
-[![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)
-
 # Pensieri
 
 > Pensieri is a Full Stack Blogging Platform made using a MEVN stack (MongoDB, ExpressJS, VueJS (specifically NuxtJS), and NodeJS).
@@ -13,7 +11,6 @@
 
 - [Installation](#installation)
 - [Features](#features)
-- [Contributing](#contributing)
 - [Team](#team)
 - [FAQ](#faq)
 - [Support](#support)
@@ -53,40 +50,9 @@ Once installed, you can run them:
 - Going into more detail on code and technologies used
 - I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
 
----
-
-## Contributing
-
-> To get started...
-
-### Step 1
-
-- **Option 1**
-    - 🍴 Fork this repo!
-
-- **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
-
-### Step 2
-
-- 🔨 **HACK AWAY!** 🔨
-
-### Step 3
-
-- 🔃 Create a new pull request using [this link](https://github.com/ewliang/Pensieri/compare).
-
----
-
 ## Team
 
 - [Eric Liang](https://www.github.com/ewliang)
-
----
-
-## FAQ
-
-- **How do I do *specifically* so and so?**
-    - No problem! Just do this.
 
 ---
 
@@ -95,12 +61,6 @@ Once installed, you can run them:
 Reach out to me at one of the following places!
 
 - Twitter at [@ericwliang](https://www.twitter.com/ericwliang)
-
----
-
-## Donations (Optional)
-
-
 
 ---
 
