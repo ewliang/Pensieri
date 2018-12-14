@@ -15,7 +15,8 @@ import PostCardComponent from '~/components/PostCardComponent.vue'
 
 export default {
   async asyncData ({ params }) {
-    let posts = await axios.get('http://localhost:4000/posts/${params.category}')
+    // Need to get the category ID somehow... currently passing title which is not the right parameter data type.
+    let posts = await axios.get('http://localhost:4000/posts/' + params.category)
     return {
       posts: posts.data
     }
