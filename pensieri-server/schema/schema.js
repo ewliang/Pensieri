@@ -29,8 +29,8 @@ const CategoryType = new GraphQLObjectType({
     name: 'Category',
     fields: () => ({
         id: { type: GraphQLID },
-        title: { type: GraphQLString },
-        permalink: { type: GraphQLString },
+        title: { type: GraphQLString, required: true },
+        permalink: { type: GraphQLString, required: true },
         description: { type: GraphQLString }
     })
 });
@@ -40,13 +40,13 @@ const PostType = new GraphQLObjectType({
     name: 'Post',
     fields: () => ({
         id: { type: GraphQLID },
-        title: { type: GraphQLString },
-        permalink: { type: GraphQLString },
+        title: { type: GraphQLString, required: true },
+        permalink: { type: GraphQLString, required: true },
         body: { type: GraphQLString },
-        category: CategoryType,
+        category: { type: CategoryType },
         isFeatured: { type: GraphQLBoolean },
         isPublished: { type: GraphQLBoolean },
-        author: UserType
+        author: { type: UserType }
     })
 });
 
@@ -60,13 +60,31 @@ const RootQuery = new GraphQLObjectType({
                 id: { type: GraphQLID }
             },
             resolve(parent, args) {
-
+                var user = new Promise((resolve, reject) => {
+                    User.findById(args.id, (err, data) => {
+                        if(err) {
+                            reject(err);
+                        } else {
+                            resolve(data);
+                        }
+                    });
+                });
+                return user;
             }
         },
         users: {
             type: UserType,
             resolve(parent, args) {
-                //return users
+                var users = new Promise((resolve, reject) => {
+                    User.find({}, (err, data) => {
+                        if(err) {
+                            reject(err);
+                        } else {
+                            resolve(data);
+                        }
+                    });
+                });
+                return users;
             }
         },
         category: {
@@ -75,13 +93,31 @@ const RootQuery = new GraphQLObjectType({
                 id: { type: GraphQLID }
             },
             resolve(parent, args) {
-
+                var category = new Promise((resolve, reject) => {
+                    Category.findById(args.id, (err, data) => {
+                        if(err) {
+                            reject(err);
+                        } else {
+                            resolve(data);
+                        }
+                    });
+                });
+                return category;
             }
         },
         categories: {
             type: CategoryType,
             resolve(parent, args) {
-                //return categories
+                var categories = new Promise((resolve, reject) => {
+                    Category.find({}, (err, data) => {
+                        if(err) {
+                            reject(err);
+                        } else {
+                            resolve(data);
+                        }
+                    });
+                });
+                return categories;
             }
         },
         post: {
@@ -90,13 +126,31 @@ const RootQuery = new GraphQLObjectType({
                 id: { type: GraphQLID }
             },
             resolve(parent, args) {
-                
+                var post = new Promise((resolve, reject) => {
+                    Post.findById(args.id, (err, data) => {
+                        if(err) {
+                            reject(err);
+                        } else {
+                            resolve(data);
+                        }
+                    });
+                });
+                return post;
             }
         },
         posts: {
             type: new GraphQLList(PostType),
             resolve(parent, args) {
-                //return posts;
+                var posts = new Promise((resolve, reject) => {
+                    Post.find({}, (err, data) => {
+                        if(err) {
+                            reject(err);
+                        } else {
+                            resolve(data);
+                        }
+                    });
+                });
+                return posts;
             }
         }
     }
