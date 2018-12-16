@@ -24,13 +24,14 @@ module.exports = {
   },
   apollo: {
     tokenName: 'pensieri-apollo-token',
-    tokenExpires: 10,
+    tokenExpires: 7,
+    authenticationType: 'Bearer',
     errorHandler(error) {
       console.log('%cError', 'background: red;', error.message)
     },
     clientConfigs: {
       default: {
-        httpEndpoint: 'http://localhost:4000',
+        httpEndpoint: 'http://localhost:4000/graphql',
         httpLinkOptions: {
           credentials: 'same-origin'
         }
