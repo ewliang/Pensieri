@@ -1,0 +1,8 @@
+{
+    categories {
+        id,
+        title,
+        permalink,
+        description
+    }
+}
