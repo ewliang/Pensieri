@@ -16,22 +16,37 @@
         </tr>
       </tbody>
     </table>
+    <br>
+    <p>TEST</p>
+    <ul>
+      <li v-for = "p in posts" :key = "p.id">
+        {{ p.title }}
+        {{ p.id }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import posts from '~/apollo/queries/admin/posts'
 
 export default {
   async asyncData () {
+    /*
     let posts = await axios.get('http://localhost:4000/posts')
     return {
       posts: posts.data
+    }*/
+  },
+  apollo: {
+    posts: {
+      query: posts
     }
   },
   methods: {
     deletePost (postID) {
-      axios.delete('http://localhost:4000/posts/' + postID)
+      //axios.delete('http://localhost:4000/posts/' + postID)
     }
   }
 }
