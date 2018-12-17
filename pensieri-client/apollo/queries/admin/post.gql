@@ -1,0 +1,10 @@
+{
+    post {
+        id,
+        title,
+        permalink,
+        body,
+        isPublished,
+        isFeatured
+    }
+}
