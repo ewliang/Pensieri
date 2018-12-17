@@ -165,17 +165,37 @@ const RootQuery = new GraphQLObjectType({
                 return post;
             }
         },
+        // GET POSTS - all posts, all posts by category
         posts: {
             type: new GraphQLList(PostType),
+            args: {
+                category: { type: GraphQLString }
+            },
             resolve(parent, args) {
                 var posts = new Promise((resolve, reject) => {
-                    Post.find({}, (err, data) => {
-                        if(err) {
-                            reject(err);
-                        } else {
-                            resolve(data);
-                        }
-                    });
+                    if(args.category != null) {
+                        Category.findOne({ permalink: args.category }, (err, data) => {
+                            if(err) {
+                                throw err;
+                            } else {
+                                Post.find({ category: data._id }, (err, data) => {
+                                    if(err) {
+                                        reject(err);
+                                    } else {
+                                        resolve(data);
+                                    }
+                                });
+                            }
+                        });
+                    } else {
+                        Post.find({}, (err, data) => {
+                            if(err) {
+                                reject(err);
+                            } else {
+                                resolve(data);
+                            }
+                        });
+                    }
                 });
                 return posts;
             }
