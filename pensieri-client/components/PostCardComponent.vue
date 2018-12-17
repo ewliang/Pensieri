@@ -12,6 +12,7 @@
 import axios from 'axios'
 
 export default {
+  name: 'PostCardComponent',
   props: [
     'featuredImage', 'postTitle', 'postExcerpt', 'postURL'
   ]
