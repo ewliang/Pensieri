@@ -1,7 +1,6 @@
 <template>
   <div>
-    TODO: Get posts by category filter.
-    <PostCardComponent v-for = "(post, index) in postsByCategory"
+    <PostCardComponent v-for = "(post, index) in posts"
       v-bind:key = "index"
       v-bind:postTitle = "post.title"
       v-bind:postExcerpt = "post.body"
@@ -19,7 +18,7 @@ export default {
     PostCardComponent
   },
   apollo: {
-    postsByCategory: {
+    posts: {
       query: postsByCategory,
       variables: {
         category: 'miscellaneous'
