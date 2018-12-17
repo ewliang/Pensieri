@@ -1,0 +1,8 @@
+mutation createCategory($title: String!, $permalink: String!, $description: String) {
+    createCategory(title: $title, permalink: $permalink, description: $description) {
+        id,
+        title,
+        permalink,
+        description
+    }
+}

@@ -1,0 +1,9 @@
+mutation createPost($title: String!, $permalink: String!, $body: String, $isPublished: Boolean!, $isFeatured: Boolean!) {
+    createPost(title: $title, permalink: $permalink, body: $body, isPublished: $isPublished, isFeatured: $isFeatured) {
+        title,
+        permalink,
+        body,
+        isPublished,
+        isFeatured
+    }
+}

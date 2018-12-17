@@ -1,0 +1,10 @@
+mutation updatePost($id: String!, $title: String!, $permalink: String!, $body: String, $isPublished: Boolean!, $isFeatured: Boolean!) {
+    updatePost(id: $id, title: $title, permalink: $permalink, body: $body, isPublished: $isPublished, isFeatured: $isFeatured) {
+        id,
+        title,
+        permalink,
+        body,
+        isPublished,
+        isFeatured
+    }
+}

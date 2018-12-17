@@ -1,0 +1,8 @@
+mutation updateCategory($title: String!, $permalink: String!, $description: String) {
+    updateCategory(title: $title, permalink: $permalink, description: $description) {
+        id,
+        title,
+        permalink,
+        description
+    }
+}

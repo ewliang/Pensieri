@@ -1,0 +1,9 @@
+query posts($category: String!) {
+    posts(category: $category) {
+        title,
+        permalink,
+        body,
+        isPublished,
+        isFeatured
+    }
+}
