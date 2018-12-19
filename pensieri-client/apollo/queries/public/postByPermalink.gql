@@ -1,0 +1,9 @@
+query post($permalink: String!) {
+    post(permalink: $permalink) {
+        title,
+        permalink,
+        body,
+        isPublished,
+        isFeatured
+    }
+}
