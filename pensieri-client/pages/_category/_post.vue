@@ -12,18 +12,22 @@
 </template>
 
 <script>
-import axios from 'axios'
+import post from '~/apollo/queries/public/postByPermalink'
 
 export default {
-  async asyncData ({ params }) {
-    let post = await axios.get('http://localhost:4000/posts/${params.post}')
+  asyncData() {
     return {
-      post: post.data
+      post: post
     }
   },
-  data () {
-    return {
-
+  apollo: {
+    post: {
+      query: post,
+      variables() {
+        return {
+          permalink: this.$route.params.post
+        }
+      }
     }
   }
 }

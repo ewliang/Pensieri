@@ -4,6 +4,7 @@
       v-bind:key = "index"
       v-bind:postTitle = "post.title"
       v-bind:postExcerpt = "post.body"
+      v-bind:postCategory = "category"
       v-bind:postURL = "post.permalink">
     </PostCardComponent>
   </div>
@@ -17,11 +18,18 @@ export default {
   components: {
     PostCardComponent
   },
+  data ({params}) {
+    return {
+      category: this.$route.params.category
+    }
+  },
   apollo: {
     posts: {
       query: postsByCategory,
-      variables: {
-        category: 'miscellaneous'
+      variables() {
+        return {
+          category: this.$route.params.category
+        }
       }
     }
   }
