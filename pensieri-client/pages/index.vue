@@ -2,11 +2,11 @@
   <section class="container">
     <div>
       <h1 class="title">
-        pensieri-client
+        Pensieri
       </h1>
-      <h2 class="subtitle">
-        A Nuxt.js client for Pensieri. Pensieri is a full stack Node.js based blogging platform.
-      </h2>
+      <p class="subtitle">
+        A Nuxt.js client for Pensieri, which is a full stack Node.js blogging platform.
+      </p>
     </div>
   </section>
 </template>
