@@ -5,6 +5,7 @@
     <p>
       {{ postExcerpt }}
     </p>
+    <a :href = "'/' + postCategory + '/' + postURL">Read More</a>
   </article>
 </template>
 
@@ -14,7 +15,7 @@ import axios from 'axios'
 export default {
   name: 'PostCardComponent',
   props: [
-    'featuredImage', 'postTitle', 'postExcerpt', 'postURL'
+    'featuredImage', 'postTitle', 'postExcerpt', 'postURL', 'postCategory'
   ]
 }
 </script>
