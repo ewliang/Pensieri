@@ -178,7 +178,7 @@ const RootQuery = new GraphQLObjectType({
                             if(err) {
                                 throw err;
                             } else {
-                                Post.find({ category: data._id }, (err, data) => {
+                                Post.find({ category: data.id }, (err, data) => {
                                     if(err) {
                                         reject(err);
                                     } else {
