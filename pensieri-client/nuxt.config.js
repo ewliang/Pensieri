@@ -10,7 +10,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'A Nuxt.js client for Pensieri. Pensieri is a full stack Node.js based blogging platform.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: '/css/normalize.css' }
     ]
   },
   modules: [
