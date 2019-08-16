@@ -15,8 +15,9 @@
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc2.3",
     "@nuxtjs/auth": "^4.5.1",
-    "@nuxtjs/axios": "^5.3.1",
-    "nuxt": "^1.0.0"
+    "@nuxtjs/axios": "^5.3.6",
+    "graphql-tag": "^2.10.0",
+    "nuxt": "^1.4.5"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
